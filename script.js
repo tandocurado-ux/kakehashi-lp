@@ -84,16 +84,3 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => {
   revealObserver.observe(element);
 });
-
-document.querySelectorAll(".video-card").forEach((button) => {
-  button.addEventListener("click", () => {
-    const id = button.dataset.youtube;
-    const iframe = document.createElement("iframe");
-    iframe.className = "video-embed";
-    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
-    iframe.title = "お酒とさかな かけはし公式YouTube動画";
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true;
-    button.replaceWith(iframe);
-  });
-});
